@@ -84,7 +84,7 @@ TouchHandler.prototype._touchMoveAndroid = function(event) {
       x : newTouchPos[0].pageX - this._lastTouchPos[0].pageX,
       y : newTouchPos[0].pageY - this._lastTouchPos[0].pageY
     };
-    var speed = 0.0005;
+    var speed = 0.005;
     this._cam.rotateX(speed * delta.y);
     this._cam.rotateY(speed * delta.x);
   }
