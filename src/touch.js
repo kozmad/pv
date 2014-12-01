@@ -109,7 +109,7 @@ TouchHandler.prototype._touchMoveAndroid = function(event) {
     var ny = newTouchPos[0].pageY-newTouchPos[1].pageY;
     var od = Math.sqrt(ox*ox+oy*oy);
     var nd = Math.sqrt(nx*nx+ny*ny);
-    var delta =  (od-nd)/od;
+    var delta = od-nd;
     speed = 0.05																																								
     this._cam.zoom( delta*speed );
   }
