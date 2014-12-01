@@ -71,7 +71,6 @@ TouchHandler.prototype._touchStartAndroid = function(event) {
   } else {
     this._touchState.lastSingleTap = null;
   }
-  this._firstTouchPos = event.touches;
   this._lastTouchPos = event.touches;
   return;
 };
@@ -104,9 +103,9 @@ TouchHandler.prototype._touchMoveAndroid = function(event) {
     this._cam.rotateZ(delta_slope);
 
     // zoom
-    var ox = this._firstTouchPos[0].pageX-this._firstTouchPos[1].pageX;
+    var ox = this._lastTouchPos[0].pageX-this._lastTouchPos[1].pageX;
     var nx = newTouchPos[0].pageX-newTouchPos[1].pageX;
-    var oy = this._firstTouchPos[0].pageY-this._firstTouchPos[1].pageY;
+    var oy = this._lastTouchPos[0].pageY-this._lastTouchPos[1].pageY;
     var ny = newTouchPos[0].pageY-newTouchPos[1].pageY;
     var od = Math.sqrt(ox*ox+oy*oy);
     var nd = Math.sqrt(nx*nx+ny*ny);
